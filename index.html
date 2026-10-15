@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="PCS Store — tecnologia e componentes para seu setup.">
+  <title>PCS Store | PC Store</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline">TECNOLOGIA PARA O SEU PRÓXIMO NÍVEL</div>
+  <header class="header">
+    <a class="brand" href="#" aria-label="PCS Store início">
+      <span class="brand-mark">PCS</span><span class="brand-copy">PC <b>STORE</b></span>
+    </a>
+    <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos"></label>
+    <button class="cart-button" id="open-cart" aria-label="Abrir carrinho">Carrinho <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow"><i></i> PCS STORE • HARDWARE & SETUP</span>
+        <h1>Seu próximo upgrade<br><em>começa aqui.</em></h1>
+        <p>Peças e acessórios para montar um setup do seu jeito.</p>
+        <a class="primary-button" href="#catalogo">Explorar produtos <span>↘</span></a>
+        <div class="hero-note"><span>◆</span> Catálogo demonstrativo — consulte disponibilidade antes de comprar.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="chip"><div class="chip-inner"><b>PCS</b><span>PERFORMANCE</span></div></div>
+        <div class="float-tag tag-one">NEXT LEVEL <b>↗</b></div>
+        <div class="float-tag tag-two"><span>●</span> PC COMPONENTS</div>
+      </div>
+    </section>
+
+    <section class="trust-row">
+      <div><span class="trust-icon">◇</span><span><b>Compra assistida</b><small>Suporte antes do pedido</small></span></div>
+      <div><span class="trust-icon">⌁</span><span><b>Envio pelo fornecedor</b><small>Prazo varia por produto</small></span></div>
+      <div><span class="trust-icon">▣</span><span><b>Pix e cartão</b><small>Após configurar o pagamento</small></span></div>
+    </section>
+
+    <section class="catalog section" id="catalogo">
+      <div class="section-heading">
+        <div><span class="eyebrow">ESCOLHA SEU UPGRADE</span><h2>Produtos em destaque<span>.</span></h2></div>
+        <span class="result-count" id="result-count">6 produtos</span>
+      </div>
+      <nav class="filters" aria-label="Filtrar produtos">
+        <button class="filter active" data-category="Todos">Todos</button>
+        <button class="filter" data-category="Placas de vídeo">Placas de vídeo</button>
+        <button class="filter" data-category="Processadores">Processadores</button>
+        <button class="filter" data-category="Memória RAM">Memória RAM</button>
+        <button class="filter" data-category="Acessórios">Acessórios</button>
+      </nav>
+      <div class="product-grid" id="product-grid"></div>
+      <p class="disclaimer">Os produtos, imagens ilustrativas e preços desta versão são exemplos para desenvolvimento. Não representam estoque real nem oferta confirmada.</p>
+    </section>
+
+    <section class="supplier-banner">
+      <div><span class="eyebrow">MODELO DE DROPSHIPPING</span><h2>Do fornecedor até a sua porta.</h2><p>Antes de vender, conecte fornecedores confiáveis, sincronize estoque e confirme prazos e política de devolução.</p></div>
+      <span class="banner-symbol">PCS<span>↗</span></span>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">PCS</span><span class="brand-copy">PC <b>STORE</b></span></a><span>© <span id="year"></span> PCS Store. Projeto inicial.</span><a href="mailto:contato@pcsstore.com.br">Fale com a loja</a></footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-panel" id="cart-panel" aria-label="Carrinho" aria-hidden="true">
+    <div class="panel-head"><div><span class="eyebrow">SEU PEDIDO</span><h2>Carrinho</h2></div><button class="icon-button" id="close-cart" aria-label="Fechar carrinho">×</button></div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-bottom"><div class="total-line"><span>Subtotal</span><b id="cart-total">R$ 0,00</b></div><small>Frete e prazo serão confirmados no checkout.</small><button class="primary-button full" id="checkout-button">Continuar para pagamento <span>→</span></button></div>
+  </aside>
+
+  <dialog id="checkout-dialog" class="checkout-dialog">
+    <form method="dialog" id="checkout-form">
+      <div class="panel-head"><div><span class="eyebrow">FINALIZAÇÃO</span><h2>Dados do pedido</h2></div><button class="icon-button" value="cancel" aria-label="Fechar">×</button></div>
+      <p class="form-note">Esta é uma demonstração. Nenhum pagamento real será cobrado nesta versão.</p>
+      <label>Nome completo<input name="name" required autocomplete="name" placeholder="Seu nome"></label>
+      <label>E-mail<input name="email" type="email" required autocomplete="email" placeholder="voce@email.com"></label>
+      <label>CEP<input name="cep" required inputmode="numeric" pattern="[0-9-]{8,9}" placeholder="00000-000"></label>
+      <label>Forma de pagamento<select name="payment" required><option value="Pix">Pix</option><option value="Cartão">Cartão de crédito</option></select></label>
+      <button class="primary-button full" type="submit">Revisar pedido <span>→</span></button>
+      <div id="checkout-message" role="status"></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

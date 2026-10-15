@@ -1,0 +1,9 @@
+{
+  "name": "PCS Store - PC Store",
+  "short_name": "PCS Store",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#070c14",
+  "theme_color": "#07111f",
+  "description": "Loja de hardware e acessórios PCS Store"
+}
